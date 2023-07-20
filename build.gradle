@@ -1,0 +1,29 @@
+import com.vipulasri.jetinstagram.buildsrc.Libs
+
+buildscript {
+  ext {
+    kotlin_version = '1.9.0'
+  }
+  repositories {
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
+  }
+  dependencies {
+    classpath Libs.androidGradlePlugin
+    classpath Libs.Kotlin.gradlePlugin
+    classpath 'com.android.tools.build:gradle:7.3.1'
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
